@@ -1,0 +1,39 @@
+body{
+    background-image: url(../../images/bg4.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+.container{
+    background: transparent;
+}
+.room-content{
+    margin-bottom: 30px;
+}
+#divContent{
+    height: 320px;
+    border: 1px solid #8f226b;
+    padding: 20px;
+    overflow-y: auto;
+    position: relative;
+}
+
+#divContent .chatContent .author,
+#divContent .chatContent .msg{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#divContent .toast{
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+    font-family: "微软雅黑";
+   
+}
+
+#inputContent{
+    margin-top: 5px;
+    width: 100%;
+    resize: none;
+    border: 1px solid #8f226b;
+}

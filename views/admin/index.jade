@@ -1,0 +1,46 @@
+extends ../adminLayout
+block headPartialBlock
+    link(rel="stylesheet", href="/stylesheets/admin/css/adminIndexStyle.css")
+block bodyPartialBlock   
+    #wrapper(class="wrapper")
+        nav#header(class="navbar navbar-inverse")
+            .container-fluid(class="nav-content")
+                .navbar-header
+                    a.navbar-brand(href="/admin/") 匿名聊天室
+                #user_nav(class="navbar-right")
+                    a#logout(href="/login/",class="btn btn-danger")
+                        span(class="glyphicon glyphicon-share-alt")
+                        span &nbsp;注销
+        #sidebar
+            ul(style="display: block;")
+                li.active
+                    a(href="/admin/index")
+                        i(class="glyphicon glyphicon-home")
+                        | 系统看板
+                li.submenu
+                    a(href="#")
+                        i(class="glyphicon glyphicon-list")
+                        span 二级功能
+                        span.label  3
+                    ul
+                        li
+                            a(href="#") Menu1
+                        li    
+                            a(href="#") Menu2
+                li
+                    a(href="/admin/roomList/")
+                        i(class="glyphicon glyphicon-tint")
+                        | 聊天室管理	
+        #content(class="content")
+            #content-header(class="mini")
+                h1 后台管理首页
+            #breadcrumb
+                a.tip-bottom(href="/admin/index")
+                    i(class="glyphicon glyphicon-home") 
+                    |首页
+                a.current(href="#") 看板
+block footPartialBlock
+    script(src="/javascripts/artDialog/dist/dialog.js")
+    script(src="/javascripts/admin/index.js")
+    script.
+        index.init();

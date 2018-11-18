@@ -1,0 +1,57 @@
+#content-header(class="mini")
+                h1 聊天室管理
+#breadcrumb
+    a.tip-bottom(href="#")
+        i(class="glyphicon glyphicon-home") 
+        |首页
+    a.current(href="#") 聊天室管理
+.panel(class="panel-primary")
+    .panel-heading 聊天室列表
+        button#addRoom(class="btn btn-danger btn-xs pull-right")
+            span(class="glyphicon glyphicon-plus")
+                |&nbsp;添加聊天室
+    .panel-body
+    table(class="table table-bordered")
+        thead
+            tr
+                th 头像
+                th 名称
+                th 总容量
+                th 主题
+                th 创建时间
+                th 状态
+                th 编辑
+            each room,i in data 
+                tr 
+                    td
+                        img(src="#{room.photoUrl}", alt="")
+                    td=room.name
+                    td=room.maxSize
+                    td=room.subject
+                    td=room.createTime
+                    td=room.isEnable
+                    td 
+                        a(href="#",class="btn btn-danger btn-sm edit-room",data-id="#{room._id}") 编辑
+#add_room(style="display:none;")
+    form.form-horizontal(action="/admin/addroom/",method="post",enctype="multipart/form-data",style="width:500px;")
+        .form-group
+            label.control-label(class="col-sm-3",for="roomname") 名称：
+            .col-sm-9
+                input#roomname(type="text", name="roomname",placeholder="请输入聊天室名称")
+        .form-group
+            label.control-label(class="col-sm-3",for="roommaxsize") 最大人数:
+            .col-sm-9
+                input#roommaxsize(type="text", name="roommaxsize",placeholder="请输入最大人数")
+        .form-group
+            label.control-label(class="col-sm-3",for="roomsubject") 主题:
+            .col-sm-9
+                textarea#roomsubject( name="roomsubject",placeholder="请输入聊天主题")
+        .form-group
+            label.control-label(class="col-sm-3",for="roomphoto") 头像:
+            .col-sm-9
+                input#roomphoto(type="file", name="roomphoto")
+        .form-group
+            .col-sm-4.col-sm-offset-3
+                button(type="submit",class="btn btn-danger")
+                    span(class="glyphicon glyphicon-plus")
+                    |&nbsp;添加聊天室

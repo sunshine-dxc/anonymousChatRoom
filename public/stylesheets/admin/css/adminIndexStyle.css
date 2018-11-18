@@ -1,0 +1,21 @@
+
+.wrapper{
+    height: 1000px;
+}
+#header .nav-content .navbar-header a{
+    color:#ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "serif";
+}
+#header .nav-content .navbar-header a:hover{
+    color:#fff;
+}
+.nav-content{
+    margin-top: 15px;
+    margin-left:20px;
+    margin-right:50px;
+}
+.content{
+    z-index:99;
+}

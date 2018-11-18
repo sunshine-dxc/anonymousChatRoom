@@ -1,0 +1,31 @@
+extends ../homeLayout
+block headPartialBlock
+    link(rel="stylesheet", href="/stylesheets/homeStyle.css")
+block bodyPartialBlock
+    .container
+        .row
+            .col-sm-6(class="col-sm-offset-3",id="register-container")
+                   
+                form.form-horizontal(action="/home/registor",method="post")
+                    fieldset
+                        legend(class="text-center") 用 户 注 册
+                        .form-group
+                            label.control-label(class="col-sm-3",for="account_registor") 账户
+                            .col-sm-8
+                                input#account_registor(class="form-control",type="text", name="account",placeholder="请输入账户名称")
+                        .form-group
+                            label.control-label(class="col-sm-3",for="nick_registor") 昵称
+                            .col-sm-8
+                                input#nick_registor(class="form-control",type="text", name="nick",placeholder="请输入昵称")
+                        .form-group
+                            label.control-label(class="col-sm-3",for="password_registor") 密码
+                            .col-sm-8
+                                input#password_registor(class="form-control",type="password", name="password",placeholder="请输入密码")
+                        .form-group
+                            label.control-label(class="col-sm-3 ",for="pw2_registor") 确认密码
+                            .col-sm-8
+                                input#pw2_registor(class="form-control",type="password", name="pw2",placeholder="请再次输入密码")
+                        .form-group
+                            .col-sm-6(class="col-sm-offset-3")
+                                button(type="submit",class="btn btn-primary form-control") 注册
+block footPartialBlock

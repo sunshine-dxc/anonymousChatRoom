@@ -1,0 +1,42 @@
+extends ../homeLayout
+block headPartialBlock
+    link(href="/stylesheets/home/chatRoom.css", rel="stylesheet")    
+block bodyPartialBlock
+    .container(class="room-content")
+        .row 
+            h1 #{roomTitle}
+            input(type="hidden", id="roomId",value= "#{roomId}")
+            input(type="hidden", id="userName",value="#{userName}")
+            span #{roomSubject}
+            hr
+        .row
+            .col-sm-8
+                #divContent
+                form
+                    .form-group
+                        textarea#inputContent(class="form-control",rows="5",placeholder="请输入聊天内容")
+                    .form-group
+                        .col-lg-3(class="col-sm-offset-9")
+                            button#roomBtnSend(type="button",class="btn btn-primary form-control")
+                                span(class="glyphicon glyphicon-send")
+                                |&nbsp;&nbsp;发送&nbsp;
+
+
+            .col-sm-4
+                fieldset
+                    legend 在线用户列表
+                    span#onlineTip(style="color:#0f0;fonr-size:12px;")
+                    ul#userList(class="list-group")
+                       
+
+    footer
+        p.text-center &copy; 2014 版权所有，翻版不究
+
+block footPartialBlock
+    script(src="/socket.io/socket.io.js")
+    script(src="/javascripts/home/chatRoom.js")
+    script.
+        $(function(){
+            chatRoom.init();
+        })
+  

@@ -1,0 +1,26 @@
+#edit_room
+    form.form-horizontal(id="form_edit_room",action="/admin/editRoom/",method="post",enctype="multipart/form-data",style="width:500px;")
+        .form-group
+            label.control-label(class="col-sm-3",for="roomname_edit") 名称：
+            .col-sm-9
+                input#roomname_edit(type="text", name="roomname",placeholder="请输入聊天室名称",value="#{data.name}")
+        .form-group
+            label.control-label(class="col-sm-3",for="roommaxsize_edit") 最大人数:
+            .col-sm-9
+                input#roommaxsize_edit(type="text", name="roommaxsize",placeholder="请输入最大人数",value="#{data.maxSize}")
+        .form-group
+            label.control-label(class="col-sm-3",for="roomsubject_edit") 主题:
+            .col-sm-9
+                textarea#roomsubject_edit( name="roomsubject",placeholder="请输入聊天主题")
+                    |#{data.subject}
+        //- .form-group
+        //-     label.control-label(class="col-sm-3",for="roomphoto") 头像:
+        //-     .col-sm-9
+        //-         input#roomphoto(type="file", name="roomphoto")
+
+        .form-group
+            .col-sm-4.col-sm-offset-4
+                input#hide_id(type="hidden", name="hideId",value="#{data._id}")
+                button#btn_edit_room(type="submit",class="btn btn-danger")
+                    span(class="glyphicon glyphicon-refresh")
+                    |&nbsp;更新聊天室

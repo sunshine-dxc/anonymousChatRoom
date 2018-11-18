@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        // function callback() {
+        // console.log("Done");
+        // }
+        // console.log("befor setTimeOut()");
+
+        // setTimeout(callback,2000);
+
+        // console.log("after setTimeout()");
+
+        // request.onreadystatechange = function () {
+        //     if(request.readyState = 4) {
+        //         if (request.status === 200) {
+        //             return success(request.responseText);
+        //         }else {
+        //             return fail(request.status);
+        //         }
+        //     }
+        // }
+        
+        // const a = new Promise(function (params) {
+            
+        // });
+        // console.log(a);
+        // console.log("支持promise");
+
+
+        function resolve(code){
+            console.log("ok");
+        }
+        function reject(abc){
+            console.log("failed");
+        }
+
+
+        function test(resolve,reject) {
+            var timeOut = Math.random()*2;
+            console.log(`set timeout to: ${timeOut} seconds.`);
+
+            setTimeout(function () {
+                if (timeOut < 1) {
+                    console.log("call resolve()");
+                    resolve(resolve);
+                }else{
+                    console.log("call reject()");
+                    reject(reject);
+                }
+            },timeOut*1000);
+            
+        }
+        
+        // var p1 = new Promise(test);
+        // var p2 = p1.then(function(result) {
+        //     console.log("成功" + result);
+        // });
+        // var p3 = p2.catch(function (reason) {
+        //     console.log("失败"+reason);
+        // });
+
+        var p1 = new Promise(test)
+                     .then(function(result){
+                         console.log("成功"+result);
+                     })
+                     .catch(function(reason){
+                         console.log("失败"+reason);
+                     })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

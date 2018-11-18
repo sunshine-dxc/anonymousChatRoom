@@ -1,0 +1,75 @@
+extends ../homeLayout
+
+block headPartialBlock
+    link(rel="stylesheet", href="/stylesheets/homeStyle.css")
+block bodyPartialBlock
+    header.navbar(class="navbar-inverse navbar-fixed-top",role="banner")
+        .container
+            .navbar-header
+                button(type="button",class="navbar-toggle",data-toggle="collapse",data-target=".bs-navbar-collapse")
+                    span.sr-only 切换导航
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href="/") 匿名聊天室
+            nav.collapse(class="navbar-collapse bs-navbar-collapse")
+                ul.nav(class="navbar-nav" )
+                    li.active
+                        a(href="/") 首页
+                ul.nav(class="navbar-nav navbar-right")
+                    li 
+                        a(href="/home/registor",style="color:yellow")  #{user==null? "注册":""}
+    section.body-center
+        .container
+            .row
+                .col-sm-8
+                    each room,i in data
+                        if(i%3==0) 
+                            .row
+                        .col-sm-4(class="text-center")
+                            .rect-normal 
+                                a(href="/home/room/#{room._id}") 
+                                    img(src= "#{room.photoUrl.replace('./public','')}", alt="")
+                                    div #{room.name}
+                .col-sm-4(class="container-right")
+                    .row(class="login-form")
+                        form.form-horizontal(action="/home/login",method="post")
+                            if(user)
+                                .form-group
+                                    .col-xs-3(class="col-xs-offset-3",style="font-weight:bold")
+                                        img(src="/stylesheets/admin/img/icons/16/client.png", alt="")
+                                        |&nbsp;账户:
+                                    .col-xs-6 #{user.name}
+                                .form-group     
+                                    .col-xs-3(class="col-xs-offset-3",style="font-weight:bold") 
+                                        img(src="/stylesheets/admin/img/icons/16/book.png", alt="")
+                                        |&nbsp;昵称:
+                                    .col-xs-6 #{user.nick}      
+                                .form-group
+                                    .col-xs-4.col-xs-offset-4
+                                        button.form-control(type="submit",name="loginout",value="true",class="btn btn-danger") 注销
+                            else
+                                .form-group
+                                    label.control-label(class="col-xs-4 ",for="username_home") 账户
+                                    .col-xs-7
+                                        input(type="text",class="form-control input-sm",name="username",placeholder="请输入账户名称")
+                                .form-group     
+                                    label.control-label(class="col-xs-4 ",for="username_home") 密码
+                                    .col-xs-7
+                                        input(type="password",class="form-control input-sm",name="userpass",placeholder="请输入账户密码")
+                                .form-group
+                                    .col-xs-4.col-xs-offset-4
+                                        button.form-control(type="submit" class="btn btn-danger") 登录
+                    .row(class="info-container")
+                         fieldset
+                            legend 信息发布区域
+                            marquee 暂无信息发布
+
+    footer(class="navbar-fixed-bottom")
+        p.text-center &copy; 2014 版权所有，翻版不究
+
+block footPartialBlock
+    script(src="/javascripts/home/index.js")
+    script.
+        index.init();
+    

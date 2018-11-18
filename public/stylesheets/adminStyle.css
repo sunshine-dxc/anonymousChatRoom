@@ -1,0 +1,29 @@
+/* 登录页面 */
+
+body{  
+    background-color: #444444;
+    background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#555555), to(#111111));
+    background-image: -webkit-linear-gradient(top, #555555 0%, #111111 100%);
+    background-image: -moz-linear-gradient(top, #555555 0%, #111111 100%);
+    background-image: -ms-linear-gradient(top, #555555 0%, #111111 100%);
+    background-image: -o-linear-gradient(top, #555555 0%, #111111 100%);
+    background-image: linear-gradient(top, #555555 0%, #111111 100%);
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.logo{
+    margin: 50px 0;
+    color: gold; 
+}
+.loginbox{
+    width: 500px;
+    height: 250px;
+    margin: auto auto;
+}
+
+

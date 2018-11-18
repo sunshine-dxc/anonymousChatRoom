@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+html(lang="zh-CN")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="Content-Type", content="text/html;charset=utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title #{title}
+        link(rel='stylesheet',href='/javascripts/bootstrap/css/bootstrap.css')
+        link(rel='stylesheet',href='/javascripts/bootstrap/css/bootstrap-theme.css')
+        link(rel="stylesheet", href="/stylesheets/admin/css/unicorn.css")
+        block headPartialBlock
+        
+    body( data-color="grey",class="flat")
+        block bodyPartialBlock
+        
+        script(src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js")
+        script(src='/javascripts/bootstrap/js/bootstrap.js')
+        
+        block footPartialBlock               

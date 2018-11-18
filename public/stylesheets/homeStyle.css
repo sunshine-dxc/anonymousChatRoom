@@ -1,0 +1,48 @@
+/* 首页样式 */
+body{
+    background-image: url(../images/bg9.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.body-center{
+    margin-top: 60px;
+}
+
+.body-center .rect-normal{
+    height: 150px;
+    border: 1px solid rgb(6, 95, 50);
+    margin-bottom: 10px;
+}
+.body-center .rect-normal img{
+    width: 100%;
+    height: 80%;
+}
+.body-center .login-form{
+    border: 1px solid rgb(6, 95, 50);
+    padding-top: 10px;   
+}
+footer{
+    background-color:lightgray;
+    padding-top: 5px;
+}
+
+.info-container{
+    border: 1px solid rgb(6, 95, 50);
+    height: 320px;
+    margin-top: 10px;
+    padding:5px;
+}
+
+/* 注册页面样式 */
+
+#register-container{
+    margin-top: 80px;
+}
+label.labelPadingT {
+    padding-top: -7px;
+}
+
+#register-container .form-group{
+    margin-top: 40px;
+}

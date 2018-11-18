@@ -1,0 +1,36 @@
+extends ../adminLayout
+//登录页面
+block headPartialBlock
+    link(rel="stylesheet", href="/stylesheets/adminStyle.css")
+block bodyPartialBlock
+    .container
+        #logo(class="logo text-center")
+            h2 匿名聊天室后台管理系统
+        #loginbox(class="loginbox well")
+            form.form-horizontal(id="loginform",action="/login" method="post")
+                .row
+                    if(err)
+                        p(class="text-danger col-xs-10 col-xs-offset-1") 用户密码错误或账户错误，请重新输入！
+                    else
+                        p(class="text-info col-xs-10 col-xs-offset-1") 请输入账户和密码登录
+                .form-group.row
+                    label.control-label(class="col-xs-2 col-xs-offset-1",for="username") 账户：
+                    .col-xs-8
+                        input.form-control(type="text", id="username",name="username",placeholder="请输入账户")
+                .form-group.row
+                    label.control-label(class="col-xs-2 col-xs-offset-1",for="password") 密码：
+                    .col-xs-8
+                        input.form-control(type="password",id="password",name="password",autocomplete="on",placeholder="请输入密码")    
+                .form-group.row
+                    .col-xs-4.col-xs-offset-4
+                        button.btn.btn-primary.form-control(type="submit") 
+                            span(class="glyphicon glyphicon-log-in")
+                            |&nbsp;登录
+block footPartialBlock
+    script.
+        if(location!=top){
+            top.href = location.href;
+        }
+
+
+              
